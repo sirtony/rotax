@@ -27,6 +27,7 @@ container.register(:container, container)
 
 Services = Dry::AutoInject(container)
 
+require_relative "version"
 require_relative "job"
 require_relative "loader"
 
@@ -36,7 +37,7 @@ unless Dir.exist?(SEARCH_PATH)
     FileUtils.mkdir_p(SEARCH_PATH)
 end
 
-logger.info("#{paint.cyan(File.basename(__FILE__, ".*"))} is starting")
+logger.info("#{paint.cyan(File.basename(__FILE__, ".*"))} v#{VERSION} is starting")
 logger.info("environment: #{IS_DOCKER ? "Docker" : "host system"}")
 logger.info("checking for dependencies")
 
