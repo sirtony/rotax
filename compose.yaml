@@ -1,0 +1,6 @@
+services:
+  rotax:
+    image: ghcr.io/sirtony/rotax:latest
+    container_name: rotax
+    volumes:
+    - ./scripts:/scripts:ro
